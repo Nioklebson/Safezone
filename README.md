@@ -23,3 +23,71 @@ Atendemos São Paulo e Grande São Paulo com soluções personalizadas para cada
 ---
 **SafeZone** - Sua segurança é nossa prioridade! 🛡️
 
+
+# 🛡️ SafeZone
+
+Sistema simples e funcional para **monitoramento de áreas de risco** e
+**alertas em tempo real**, desenvolvido com **HTML, CSS e JavaScript**.
+
+------------------------------------------------------------------------
+
+## 📌 Descrição do Projeto
+
+O **SafeZone** foi criado para identificar áreas de perigo e alertar
+usuários em tempo real.\
+O sistema marca zonas inseguras no mapa da interface e exibe avisos
+visuais ao usuário.
+
+------------------------------------------------------------------------
+
+## 🧩 Tecnologias Utilizadas
+
+-   **HTML5**
+-   **CSS3**
+-   **JavaScript**
+
+------------------------------------------------------------------------
+
+## 🎯 Funcionalidades
+
+✔ Mapa interativo\
+✔ Identificação de zonas de risco\
+✔ Alertas visuais\
+✔ Interface simples\
+✔ Totalmente front-end
+
+------------------------------------------------------------------------
+
+## 📂 Estrutura do Projeto
+
+    safezone/
+    │── index.html
+    │── style.css
+    │── script.js
+    │── /img
+
+------------------------------------------------------------------------
+
+## 🚀 Como Rodar o Projeto
+
+1.  Baixe ou clone o repositório\
+2.  Abra a pasta\
+3.  Clique em **index.html**
+
+------------------------------------------------------------------------
+
+## 📄 Documentação Extra
+
+Crie uma pasta **docs** se quiser separar documentação:
+
+    /docs
+       └── manual.md
+       └── explicacao.md
+
+------------------------------------------------------------------------
+
+## 👨‍💻 Autor
+Nioklebson 
+Ruan
+
+

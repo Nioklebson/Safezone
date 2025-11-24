@@ -89,5 +89,8 @@ Crie uma pasta **docs** se quiser separar documentação:
 ## 👨‍💻 Autor
 Nioklebson 
 Ruan
+Professores: Juan Apolinário e Pablo Ramon
+Integrantes: Ruan Carlos Moura de Arruda – RA: 1362313804
+Nioklebson da Silva Tavares – RA: 1362320252
 
 

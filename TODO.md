@@ -1,0 +1,9 @@
+- [x] Reestruturar index.html para seções corporativas: Hero, Sobre, Serviços (com mapa), Equipe, Portfólio, Contato, Footer
+- [x] Atualizar styles.css para tema corporativo limpo: cores neutras, gradientes suaves, responsivo com Flexbox/Grid, variáveis CSS, animações suaves
+- [x] Ajustar app.js para focar no mapa: remover autenticação e formulários de relatório, manter mapa funcional
+- [x] Atualizar README.md para versão não-acadêmica, removendo funcionalidades acadêmicas
+- [x] Remover referências acadêmicas do site (meta description, texto do mapa)
+- [x] Implementar sistema de registro de ocorrências em tempo real no mapa
+- [x] Testar responsividade em diferentes dispositivos
+- [x] Verificar animações e interações
+- [x] Garantir consistência visual

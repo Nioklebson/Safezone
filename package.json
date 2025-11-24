@@ -1,0 +1,22 @@
+{
+  "name": "safezone",
+  "version": "1.0.0",
+  "description": "SafeZone - Segurança Corporativa frontend project",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "safezone",
+    "security",
+    "firebase",
+    "leaflet"
+  ],
+  "author": "SafeZone Team",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.6.1",
+    "jsdom": "^22.1.0"
+  }
+}

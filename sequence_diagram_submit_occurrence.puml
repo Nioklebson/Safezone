@@ -1,0 +1,21 @@
+@startuml SafezoneSubmitOccurrenceSequence
+
+actor User
+participant Map
+participant Form
+participant Firestore
+
+User -> Map : initMap()
+Map -> Map : load TileLayer
+Map -> Map : request geolocation
+Map -> Map : add or update Marker event
+Map -> Form : update lat/lng fields
+
+User -> Form : fill form fields
+User -> Form : submitForm()
+Form -> Form : validate input fields
+Form -> Firestore : addDoc occurrence data
+Firestore -> Map : on new doc -> add marker
+Form -> Form : reset form
+
+@enduml

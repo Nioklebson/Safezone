@@ -1,0 +1,67 @@
+@startuml SafezoneAppClassDiagramComplete
+
+class FirebaseApp {
+  - configuração: Object
+  + inicializarApp(configuração)
+}
+
+class Firestore {
+  + obterFirestore(app)
+  + adicionarDocumento(colecao, dados)
+  + obterDocumentos(colecao)
+}
+
+class LeafletMap {
+  - mapa
+  - marcador
+  + iniciarMapa()
+  + definirVisao(lat, lng, zoom)
+  + adicionarMarcador(lat, lng)
+  + vincularPopup(texto)
+  + aoClicarMapa(callback)
+  + aoSucessoGeolocalizacao(pos)
+  + aoErroGeolocalizacao(erro)
+  + limparMarcadores()
+
+}
+
+class ModalOcorrencia {
+  - modalElemento
+  + criarModal(lat, lng)
+  + mostrarModal()
+  + fecharModal()
+  + registrarOcorrencia(dados)
+}
+
+class FormularioOcorrencia {
+  + enviarFormulario(evento)
+  + validarCampos()
+  + obterValorCampo(campo)
+  + resetarFormulario()
+}
+
+class LocalStorageOcorrencias {
+  + salvarOcorrencia(ocorrencia)
+  + carregarOcorrencias() : list
+}
+
+class Navegacao {
+  + configurarScrollSuave()
+  + configurarMenuHamburguer()
+}
+
+class FormularioContato {
+  + enviarFormulario(evento)
+  + validarCampos()
+  + resetarFormulario()
+}
+
+FirebaseApp "1" --> "1" Firestore : inicializa
+LeafletMap *-- ModalOcorrencia : cria modal
+LeafletMap *-- FormularioOcorrencia : atualiza campos lat,lng do form
+FormularioOcorrencia --> LocalStorageOcorrencias : salva ocorrência
+LeafletMap --> LocalStorageOcorrencias : carrega ocorrências
+FormularioContato --> Navegacao : controla navegação e menu
+LeafletMap --> LeafletMap : gerencia marcadores
+
+@enduml

@@ -1,0 +1,10 @@
+@startuml SafezoneUseCaseDiagram
+
+actor User
+
+User --> (Initialize Map)
+User --> (Submit Occurrence)
+User --> (Load Occurrences)
+User --> (Contact Form)
+
+@enduml

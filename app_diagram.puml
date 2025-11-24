@@ -1,0 +1,60 @@
+@startuml SafezoneApp
+
+!define RECTANGLE class
+
+skinparam componentStyle rectangle
+
+package "Firebase" {
+  RECTANGLE FirebaseApp {
+    +initializeApp(config)
+  }
+  RECTANGLE Firestore {
+    +getFirestore(app)
+    +addDoc(collection, data)
+    +getDocs(collection)
+  }
+}
+
+package "Leaflet Map" {
+  RECTANGLE Map {
+    +initMap()
+    +setView(lat, lng, zoom)
+    +addMarker(lat, lng)
+    +bindPopup(text)
+  }
+}
+
+rectangle "Form" {
+  +submitForm()
+  +getFieldValue(field)
+  +reset()
+}
+
+' Actors
+actor User
+
+User --> Map : opens page, triggers initMap
+User --> Form : fills and submits occurrence
+
+' Initialization
+FirebaseApp --> Firestore : initialize Firestore with app
+
+' Map Initialization Flow
+User --> Map: initMap()
+Map --> Map : load TileLayer
+Map --> Map : request geolocation
+Map --> Map : add or update Marker event\n(on geolocation or map click)
+Map --> Form : update lat/lng fields
+
+' Form Submission Flow
+Form --> Form : validate input fields
+Form --> Firestore : addDoc occurrence data
+Firestore --> Map : on new doc -> add marker
+Form --> Form : reset form
+
+' Loading Occurrences Flow
+Map --> Firestore : getDocs collection "ocorrencias"
+Firestore --> Map : return docs
+Map --> Map : add markers for each occurrence
+
+@enduml

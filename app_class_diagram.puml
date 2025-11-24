@@ -1,0 +1,39 @@
+@startuml SafezoneAppClassDiagram
+
+class FirebaseApp {
+  - configuração: Object
+  + inicializarApp(configuração)
+}
+
+class Firestore {
+  + obterFirestore(app)
+  + adicionarDocumento(colecao, dados)
+  + obterDocumentos(colecao)
+}
+
+class LeafletMap {
+  - mapa
+  - marcador
+  + iniciarMapa()
+  + definirVisao(lat, lng, zoom)
+  + adicionarMarcador(lat, lng)
+  + vincularPopup(texto)
+  + aoClicarMapa(callback)
+  + aoSucessoGeolocalizacao(pos)
+  + aoErroGeolocalizacao(erro)
+}
+
+class FormularioOcorrencia {
+  + enviarFormulario(evento)
+  + validarCampos()
+  + obterValorCampo(campo)
+  + resetarFormulario()
+}
+
+FirebaseApp "1" --> "1" Firestore : inicializa
+LeafletMap *-- FormularioOcorrencia : atualiza campos lat,lng
+FormularioOcorrencia --> Firestore : salva ocorrência
+LeafletMap --> Firestore : carrega ocorrências
+LeafletMap --> LeafletMap : gerencia marcadores
+
+@enduml
